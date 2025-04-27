@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TaskManager</title>
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="page-header text-center">
+        <h1><span class="fa fa-check"></span> Task Manager</h1>
+        <a href="/" class="btn btn-default btn-sm">Logout</a>
+      </div>
+    </header>
+    <div class="container">
+      <div class="col-sm-6 margin">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">My Tasks</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group mytasks">
+              <% for(let i=0; i < tasks.length; i++) { %>
+              <li class="list-group-item task">
+                <span class="task-name"><%= tasks[i].name %></span>
+                <span class="task-description"
+                  ><strong><%= tasks[i].tasks %></strong></span
+                >
+                <span class="task-status"><%= tasks[i].checkDone %></span>
+                <span class="pull-right">
+                  <button class="btn btn-success btn-xs">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  </button>
+                  <button class="btn btn-danger btn-xs">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                </span>
+              </li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">What do you need to get done?</h3>
+          </div>
+          <div class="panel-body">
+            <% if (user.local.email) { %>
+            <form action="/dashboard" method="POST" class="form-inline">
+              <div class="form-group">
+                <input type="hidden" class="form-control" name="name" />
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter a task"
+                  name="tasks" />
+              </div>
+              <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
