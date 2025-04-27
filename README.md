@@ -23,13 +23,13 @@ A simple, elegant task management application built with Node.js, Express, and M
 1. Clone the repository
 
    ```
-   git clone https://github.com/yourusername/task-manager.git
+   git clone https://github.com/yourusername/TaskManager.git
    ```
 
 2. Navigate to the project directory
 
    ```
-   cd task-manager
+   cd TaskManager
    ```
 
 3. Install dependencies
