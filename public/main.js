@@ -6,7 +6,7 @@ Array.from(checkDone).forEach(function(element) {
         const name = this.parentNode.parentNode.querySelector('.task-name').innerText
         const tasks = this.parentNode.parentNode.querySelector('.task-description').innerText
         const checkDone = this.parentNode.parentNode.querySelector('.task-status').innerText
-        fetch('/dashboard/done', { // Changed route to /dashboard/done
+        fetch('/dashboard/done', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
